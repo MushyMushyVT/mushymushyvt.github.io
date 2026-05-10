@@ -66,11 +66,22 @@
   .card:nth-child(1){animation-delay:0.05s} .card:nth-child(2){animation-delay:0.10s} .card:nth-child(3){animation-delay:0.15s} .card:nth-child(4){animation-delay:0.20s} .card:nth-child(5){animation-delay:0.25s} .card:nth-child(6){animation-delay:0.30s} .card:nth-child(7){animation-delay:0.35s} .card:nth-child(8){animation-delay:0.40s} .card:nth-child(9){animation-delay:0.45s} .card:nth-child(10){animation-delay:0.50s}
   footer { text-align:center; padding:2rem 0 1rem; color:var(--muted); font-size:0.75rem; border-top:1px solid var(--border); margin-top:2rem; }
   footer a { color:var(--accent2); text-decoration:none; }
+  .musho-wrap { display:flex; justify-content:center; margin-bottom:0.5rem; }
+#musho { animation:float 3s ease-in-out infinite; cursor:pointer; }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
+  <div class="musho-wrap">
+  <img id="musho"
+       src="./Musho_Quite@112.png"
+       alt="Musho"
+       width="112"
+       height="112"
+       onmouseenter="this.src='./Musho_Talking@112.png'"
+       onmouseleave="this.src='./Musho_Quite@112.png'">
+</div>
     <div class="logo-wrap">
       <span class="slime-icon">🫧</span>
       <h1>MushyMushyVT</h1>
