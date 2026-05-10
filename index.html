@@ -33,8 +33,14 @@
   header { text-align:center; padding:3.5rem 0 2rem; }
   .logo-wrap { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; }
   .slime-icon { font-size:2.5rem; filter:drop-shadow(0 0 12px rgba(124,58,237,0.6)); animation:float 3s ease-in-out infinite; }
-
-
+  .musho-wrap { display:flex; justify-content:center; margin-bottom:0.5rem; }
+  #musho {
+    animation:float 3s ease-in-out infinite;
+    cursor:pointer;
+    filter:drop-shadow(0 0 14px rgba(124,58,237,0.6));
+    transition:filter 0.2s;
+  }
+  #musho:hover { filter:drop-shadow(0 0 24px rgba(168,85,247,0.9)); }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
   h1 { font-family:'Cinzel Decorative',serif; font-size:clamp(1.4rem,4vw,2rem); background:linear-gradient(135deg,#a855f7,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .subtitle { color:var(--muted); font-size:0.9rem; margin-top:0.5rem; letter-spacing:0.05em; }
@@ -66,24 +72,22 @@
   .card:nth-child(1){animation-delay:0.05s} .card:nth-child(2){animation-delay:0.10s} .card:nth-child(3){animation-delay:0.15s} .card:nth-child(4){animation-delay:0.20s} .card:nth-child(5){animation-delay:0.25s} .card:nth-child(6){animation-delay:0.30s} .card:nth-child(7){animation-delay:0.35s} .card:nth-child(8){animation-delay:0.40s} .card:nth-child(9){animation-delay:0.45s} .card:nth-child(10){animation-delay:0.50s}
   footer { text-align:center; padding:2rem 0 1rem; color:var(--muted); font-size:0.75rem; border-top:1px solid var(--border); margin-top:2rem; }
   footer a { color:var(--accent2); text-decoration:none; }
-  .musho-wrap { display:flex; justify-content:center; margin-bottom:0.5rem; }
-#musho { animation:float 3s ease-in-out infinite; cursor:pointer; }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-  <div class="musho-wrap">
-  <img id="musho"
-       src="./Musho_Quite.png"
-       alt="Musho"
-       width="220"
-       height="220"
-       onmouseenter="this.src='./Musho_Talking.png'"
-       onmouseleave="this.src='./Musho_Quite.png'">
-</div>
+    <div class="musho-wrap">
+      <img id="musho"
+           src="./Musho_Quite_112.png"
+           alt="Musho"
+           width="220"
+           height="220"
+           onmouseenter="this.src='./Musho_Talking_112.png'"
+           onmouseleave="this.src='./Musho_Quite_112.png'">
+    </div>
     <div class="logo-wrap">
-      <span class="slime-icon">🫧</span>
+      <span class="slime-icon"></span>
       <h1>MushyMushyVT</h1>
     </div>
     <p class="subtitle">Twitch Commands &amp; SlimeCoin Guide</p>
@@ -92,7 +96,6 @@
       twitch.tv/mushymushyvt
     </a>
   </header>
-
   <div class="sc-banner">
     <div class="sc-item"><span>💬</span> Chat message <strong>+10 $SC</strong></div>
     <div class="sc-item"><span>👁️</span> Watching (per min) <strong>+100 $SC</strong></div>
@@ -105,378 +108,101 @@
   <div class="section">
     <div class="section-title">🎰 Gambling Games</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🪙</div>
-        <div class="card-body">
-          <div class="cmd">!gamble &lt;amount&gt;</div>
-          <div class="desc">50/50 coin flip. Heads you win, tails you lose.</div>
-          <div class="usage">!gamble 500 &nbsp;|&nbsp; !gamble all &nbsp;|&nbsp; !gamble half &nbsp;|&nbsp; !gamble 25%</div>
-        </div>
-        <span class="badge badge-easy">EASY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎰</div>
-        <div class="card-body">
-          <div class="cmd">!slots &lt;amount&gt;</div>
-          <div class="desc">Spin 3 reels of Twitch emotes. Match 2 for a small win, match 3 for a jackpot. BibleThump jackpot = 50x!</div>
-          <div class="usage">!slots 1000 &nbsp;|&nbsp; !slots 5k</div>
-        </div>
-        <span class="badge badge-medium">MEDIUM</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🃏</div>
-        <div class="card-body">
-          <div class="cmd">!blackjack &lt;amount&gt;</div>
-          <div class="desc">Classic blackjack vs the dealer. Get to 21 without busting. Blackjack pays 3:2! Min 100, Max 10,000 $SC.</div>
-          <div class="usage">!blackjack 500 then !blackjack hit / !blackjack stand</div>
-        </div>
-        <span class="badge badge-easy">EASY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎡</div>
-        <div class="card-body">
-          <div class="cmd">!roulette &lt;amount&gt; &lt;bet&gt;</div>
-          <div class="desc">Full roulette table. Straight up numbers pay 35:1. Red/black/odd/even pay 1:1. Dozens and columns pay 2:1.</div>
-          <div class="usage">!roulette 500 red &nbsp;|&nbsp; !roulette 1k 17 &nbsp;|&nbsp; !roulette 500 1st &nbsp;|&nbsp; !roulette 200 odd</div>
-        </div>
-        <span class="badge badge-hard">HARD</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎟️</div>
-        <div class="card-body">
-          <div class="cmd">!scratch</div>
-          <div class="desc">Buy a 200 $SC scratch card. Reveal 3 symbols — match 2 for a win, match 3 for a big win. 7️⃣7️⃣7️⃣ = 100x!</div>
-          <div class="usage">!scratch &nbsp;(fixed cost: 200 $SC)</div>
-        </div>
-        <span class="badge badge-free">200 $SC</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">📍</div>
-        <div class="card-body">
-          <div class="cmd">!plinko &lt;amount&gt; &lt;difficulty&gt;</div>
-          <div class="desc">Drop a chip down 16 rows of pegs. Easy has gentle multipliers, Expert goes up to 10,000x but mostly hits 0.1x. Max 50,000 $SC on Expert.</div>
-          <div class="usage">!plinko 1k easy &nbsp;|&nbsp; !plinko 50k expert &nbsp;|&nbsp; !plinko 5000 hard &nbsp;|&nbsp; !plinko 2k medium</div>
-        </div>
-        <span class="badge badge-hard">HARD</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎫</div>
-        <div class="card-body">
-          <div class="cmd">!lottery</div>
-          <div class="desc">Buy tickets for 500 $SC each. Pot grows with every ticket. Mushy draws a winner live on stream — winner takes everything!</div>
-          <div class="usage">!lottery &nbsp;|&nbsp; !lottery 5 (buy 5 tickets) &nbsp;|&nbsp; !lottery pot</div>
-        </div>
-        <span class="badge badge-info">POT GAME</span>
-      </div>
+      <div class="card"><div class="card-icon">🪙</div><div class="card-body"><div class="cmd">!gamble &lt;amount&gt;</div><div class="desc">50/50 coin flip. Heads you win, tails you lose.</div><div class="usage">!gamble 500 &nbsp;|&nbsp; !gamble all &nbsp;|&nbsp; !gamble half &nbsp;|&nbsp; !gamble 25%</div></div><span class="badge badge-easy">EASY</span></div>
+      <div class="card"><div class="card-icon">🎰</div><div class="card-body"><div class="cmd">!slots &lt;amount&gt;</div><div class="desc">Spin 3 reels of Twitch emotes. Match 2 for a small win, match 3 for a jackpot. BibleThump jackpot = 50x!</div><div class="usage">!slots 1000 &nbsp;|&nbsp; !slots 5k</div></div><span class="badge badge-medium">MEDIUM</span></div>
+      <div class="card"><div class="card-icon">🃏</div><div class="card-body"><div class="cmd">!blackjack &lt;amount&gt;</div><div class="desc">Classic blackjack vs the dealer. Get to 21 without busting. Blackjack pays 3:2! Min 100, Max 10,000 $SC.</div><div class="usage">!blackjack 500 then !blackjack hit / !blackjack stand</div></div><span class="badge badge-easy">EASY</span></div>
+      <div class="card"><div class="card-icon">🎡</div><div class="card-body"><div class="cmd">!roulette &lt;amount&gt; &lt;bet&gt;</div><div class="desc">Full roulette table. Straight up numbers pay 35:1. Red/black/odd/even pay 1:1. Dozens and columns pay 2:1.</div><div class="usage">!roulette 500 red &nbsp;|&nbsp; !roulette 1k 17 &nbsp;|&nbsp; !roulette 500 1st &nbsp;|&nbsp; !roulette 200 odd</div></div><span class="badge badge-hard">HARD</span></div>
+      <div class="card"><div class="card-icon">🎟️</div><div class="card-body"><div class="cmd">!scratch</div><div class="desc">Buy a 200 $SC scratch card. Reveal 3 symbols — match 2 for a win, match 3 for a big win. 7️⃣7️⃣7️⃣ = 100x!</div><div class="usage">!scratch &nbsp;(fixed cost: 200 $SC)</div></div><span class="badge badge-free">200 $SC</span></div>
+      <div class="card"><div class="card-icon">📍</div><div class="card-body"><div class="cmd">!plinko &lt;amount&gt; &lt;difficulty&gt;</div><div class="desc">Drop a chip down 16 rows of pegs. Easy has gentle multipliers, Expert goes up to 10,000x but mostly hits 0.1x. Max 50,000 $SC on Expert.</div><div class="usage">!plinko 1k easy &nbsp;|&nbsp; !plinko 50k expert &nbsp;|&nbsp; !plinko 5000 hard &nbsp;|&nbsp; !plinko 2k medium</div></div><span class="badge badge-hard">HARD</span></div>
+      <div class="card"><div class="card-icon">🎫</div><div class="card-body"><div class="cmd">!lottery</div><div class="desc">Buy tickets for 500 $SC each. Pot grows with every ticket. Mushy draws a winner live on stream — winner takes everything!</div><div class="usage">!lottery &nbsp;|&nbsp; !lottery 5 (buy 5 tickets) &nbsp;|&nbsp; !lottery pot</div></div><span class="badge badge-info">POT GAME</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">⚔️ Player vs Player</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎲</div>
-        <div class="card-body">
-          <div class="cmd">!gamble challenge @user &lt;amount&gt;</div>
-          <div class="desc">Challenge another viewer to a 50/50 coin flip. They have 60 seconds to accept or decline. Both need enough $SC to cover the bet.</div>
-          <div class="usage">!gamble challenge @friend 5000 → target types !accept or !decline</div>
-        </div>
-        <span class="badge badge-pvp">PVP</span>
-      </div>
+      <div class="card"><div class="card-icon">🎲</div><div class="card-body"><div class="cmd">!gamble challenge @user &lt;amount&gt;</div><div class="desc">Challenge another viewer to a 50/50 coin flip. They have 60 seconds to accept or decline. Both need enough $SC to cover the bet.</div><div class="usage">!gamble challenge @friend 5000 → target types !accept or !decline</div></div><span class="badge badge-pvp">PVP</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">💰 SlimeCoin Commands</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">💰</div>
-        <div class="card-body">
-          <div class="cmd">!points</div>
-          <div class="desc">Check your current SlimeCoin balance.</div>
-          <div class="usage">!points</div>
-        </div>
-        <span class="badge badge-info">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">💸</div>
-        <div class="card-body">
-          <div class="cmd">!points give @user &lt;amount&gt;</div>
-          <div class="desc">Send SlimeCoins to another viewer. Supports any argument order.</div>
-          <div class="usage">!points give @friend 1000 &nbsp;|&nbsp; !points @friend 1k</div>
-        </div>
-        <span class="badge badge-info">TRANSFER</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🏆</div>
-        <div class="card-body">
-          <div class="cmd">!top</div>
-          <div class="desc">Show the top 5 richest viewers on the SlimeCoin leaderboard.</div>
-          <div class="usage">!top</div>
-        </div>
-        <span class="badge badge-info">INFO</span>
-      </div>
+      <div class="card"><div class="card-icon">💰</div><div class="card-body"><div class="cmd">!points</div><div class="desc">Check your current SlimeCoin balance.</div><div class="usage">!points</div></div><span class="badge badge-info">INFO</span></div>
+      <div class="card"><div class="card-icon">💸</div><div class="card-body"><div class="cmd">!points give @user &lt;amount&gt;</div><div class="desc">Send SlimeCoins to another viewer. Supports any argument order.</div><div class="usage">!points give @friend 1000 &nbsp;|&nbsp; !points @friend 1k</div></div><span class="badge badge-info">TRANSFER</span></div>
+      <div class="card"><div class="card-icon">🏆</div><div class="card-body"><div class="cmd">!top</div><div class="desc">Show the top 5 richest viewers on the SlimeCoin leaderboard.</div><div class="usage">!top</div></div><span class="badge badge-info">INFO</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">🎣 Fishing</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎣</div>
-        <div class="card-body">
-          <div class="cmd">!fish</div>
-          <div class="desc">Cast your line for 75 $SC. Catch one of 87 fish species across 5 rarity tiers — or reel in trash, a mystery find, or a legendary mythical creature. Each catch can also roll a material tier for bonus multipliers!</div>
-          <div class="usage">!fish</div>
-        </div>
-        <span class="badge badge-free">75 $SC</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <div class="card-body">
-          <div class="cmd">!fishlog / !pb</div>
-          <div class="desc">View your full fishing record — total casts, catch rate, fails, trash caught, total $SC earned, best catch by value, and heaviest catch.</div>
-          <div class="usage">!fishlog &nbsp;|&nbsp; !pb</div>
-        </div>
-        <span class="badge badge-info">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🏆</div>
-        <div class="card-body">
-          <div class="cmd">!topfish</div>
-          <div class="desc">The all-time fishing Hall of Fame. Top 5 catches ranked by rarity first, then material tier, then value. A Platinum Carp will never outrank a normal Swordfish.</div>
-          <div class="usage">!topfish</div>
-        </div>
-        <span class="badge badge-info">HALL OF FAME</span>
-      </div>
+      <div class="card"><div class="card-icon">🎣</div><div class="card-body"><div class="cmd">!fish</div><div class="desc">Cast your line for 75 $SC. Catch one of 87 fish species across 5 rarity tiers — or reel in trash, a mystery find, or a legendary mythical creature. Each catch can also roll a material tier for bonus multipliers!</div><div class="usage">!fish</div></div><span class="badge badge-free">75 $SC</span></div>
+      <div class="card"><div class="card-icon">📊</div><div class="card-body"><div class="cmd">!fishlog / !pb</div><div class="desc">View your full fishing record — total casts, catch rate, fails, trash caught, total $SC earned, best catch by value, and heaviest catch.</div><div class="usage">!fishlog &nbsp;|&nbsp; !pb</div></div><span class="badge badge-info">INFO</span></div>
+      <div class="card"><div class="card-icon">🏆</div><div class="card-body"><div class="cmd">!topfish</div><div class="desc">The all-time fishing Hall of Fame. Top 5 catches ranked by rarity first, then material tier, then value. A Platinum Carp will never outrank a normal Swordfish.</div><div class="usage">!topfish</div></div><span class="badge badge-info">HALL OF FAME</span></div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">🐟 Fish Rarities & Materials</div>
+    <div class="section-title">🐟 Fish Rarities &amp; Materials</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">⚪</div>
-        <div class="card-body">
-          <div class="cmd">Common → Uncommon → Rare → Legendary → Mythical</div>
-          <div class="desc">87 species across 5 tiers. Common fish like Bluegill and Bass are frequent catches. Mythicals like The Kraken, Leviathan, Moby Dick, and Jormungandr are extraordinarily rare. Every fish has a realistic weight range — heavier fish are worth more.</div>
-        </div>
-        <span class="badge badge-info">RARITY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">💎</div>
-        <div class="card-body">
-          <div class="cmd">Material Tiers — bonus multipliers on every catch</div>
-          <div class="desc">Every fish also rolls a material tier. Normal (1x, 70%) → 🟤 Copper (1.5x, 20%) → ⚪ Silver (2.5x, 8%) → ⭐ Gold (5x, 1.9%) → 💎 Platinum (10x, 0.1%). Gold and Platinum catches trigger a chat announcement!</div>
-        </div>
-        <span class="badge badge-hard">RARE</span>
-      </div>
+      <div class="card"><div class="card-icon">⚪</div><div class="card-body"><div class="cmd">Common → Uncommon → Rare → Legendary → Mythical</div><div class="desc">87 species across 5 tiers. Common fish like Bluegill and Bass are frequent catches. Mythicals like The Kraken, Leviathan, Moby Dick, and Jormungandr are extraordinarily rare. Every fish has a realistic weight range — heavier fish are worth more.</div></div><span class="badge badge-info">RARITY</span></div>
+      <div class="card"><div class="card-icon">💎</div><div class="card-body"><div class="cmd">Material Tiers — bonus multipliers on every catch</div><div class="desc">Every fish also rolls a material tier. Normal (1x, 70%) → 🟤 Copper (1.5x, 20%) → ⚪ Silver (2.5x, 8%) → ⭐ Gold (5x, 1.9%) → 💎 Platinum (10x, 0.1%). Gold and Platinum catches trigger a chat announcement!</div></div><span class="badge badge-hard">RARE</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">🎮 Overwatch Stats</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">⚔️</div>
-        <div class="card-body">
-          <div class="cmd">!owstats &lt;hero&gt;</div>
-          <div class="desc">Look up Overwatch 2 stats for a specific hero.</div>
-          <div class="usage">!owstats mercy &nbsp;|&nbsp; !owstats tracer &nbsp;|&nbsp; !owstats reinhardt</div>
-        </div>
-        <span class="badge badge-info">STATS</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <div class="card-body">
-          <div class="cmd">!owstats top</div>
-          <div class="desc">Shows stats for Mushy's top played Overwatch 2 heroes.</div>
-          <div class="usage">!owstats top</div>
-        </div>
-        <span class="badge badge-info">STATS</span>
-      </div>
+      <div class="card"><div class="card-icon">⚔️</div><div class="card-body"><div class="cmd">!owstats &lt;hero&gt;</div><div class="desc">Look up Overwatch 2 stats for a specific hero.</div><div class="usage">!owstats mercy &nbsp;|&nbsp; !owstats tracer &nbsp;|&nbsp; !owstats reinhardt</div></div><span class="badge badge-info">STATS</span></div>
+      <div class="card"><div class="card-icon">📊</div><div class="card-body"><div class="cmd">!owstats top</div><div class="desc">Shows stats for Mushy's top played Overwatch 2 heroes.</div><div class="usage">!owstats top</div></div><span class="badge badge-info">STATS</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">😄 Fun Commands</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎱</div>
-        <div class="card-body">
-          <div class="cmd">!8ball &lt;question&gt;</div>
-          <div class="desc">Ask the Magic 8 Ball anything. Also works as !magic and !magic8.</div>
-          <div class="usage">!8ball will I win? &nbsp;|&nbsp; !magic am I lucky today?</div>
-        </div>
-        <span class="badge badge-fun">FUN</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">👆</div>
-        <div class="card-body">
-          <div class="cmd">!boop &lt;@user&gt;</div>
-          <div class="desc">Boop someone on the nose.</div>
-          <div class="usage">!boop @friend</div>
-        </div>
-        <span class="badge badge-fun">FUN</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🤗</div>
-        <div class="card-body">
-          <div class="cmd">!hug &lt;@user&gt;</div>
-          <div class="desc">Give someone a warm hug.</div>
-          <div class="usage">!hug @friend</div>
-        </div>
-        <span class="badge badge-fun">FUN</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🫶</div>
-        <div class="card-body">
-          <div class="cmd">!headpat &lt;@user&gt;</div>
-          <div class="desc">Give someone a gentle headpat.</div>
-          <div class="usage">!headpat @friend</div>
-        </div>
-        <span class="badge badge-fun">FUN</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">💤</div>
-        <div class="card-body">
-          <div class="cmd">!lurk / !unlurk</div>
-          <div class="desc">Let chat know you're lurking in the shadows. Use !unlurk when you return!</div>
-          <div class="usage">!lurk &nbsp;|&nbsp; !unlurk</div>
-        </div>
-        <span class="badge badge-fun">FUN</span>
-      </div>
+      <div class="card"><div class="card-icon">🎱</div><div class="card-body"><div class="cmd">!8ball &lt;question&gt;</div><div class="desc">Ask the Magic 8 Ball anything. Also works as !magic and !magic8.</div><div class="usage">!8ball will I win? &nbsp;|&nbsp; !magic am I lucky today?</div></div><span class="badge badge-fun">FUN</span></div>
+      <div class="card"><div class="card-icon">👆</div><div class="card-body"><div class="cmd">!boop &lt;@user&gt;</div><div class="desc">Boop someone on the nose.</div><div class="usage">!boop @friend</div></div><span class="badge badge-fun">FUN</span></div>
+      <div class="card"><div class="card-icon">🤗</div><div class="card-body"><div class="cmd">!hug &lt;@user&gt;</div><div class="desc">Give someone a warm hug.</div><div class="usage">!hug @friend</div></div><span class="badge badge-fun">FUN</span></div>
+      <div class="card"><div class="card-icon">🫶</div><div class="card-body"><div class="cmd">!headpat &lt;@user&gt;</div><div class="desc">Give someone a gentle headpat.</div><div class="usage">!headpat @friend</div></div><span class="badge badge-fun">FUN</span></div>
+      <div class="card"><div class="card-icon">💤</div><div class="card-body"><div class="cmd">!lurk / !unlurk</div><div class="desc">Let chat know you're lurking in the shadows. Use !unlurk when you return!</div><div class="usage">!lurk &nbsp;|&nbsp; !unlurk</div></div><span class="badge badge-fun">FUN</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">🎟️ Raffle</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎟️</div>
-        <div class="card-body">
-          <div class="cmd">!join</div>
-          <div class="desc">Enter an active raffle for free. You have 30 seconds from when it starts. You'll get a confirmation message when you're in.</div>
-          <div class="usage">!join</div>
-        </div>
-        <span class="badge badge-free">FREE</span>
-      </div>
+      <div class="card"><div class="card-icon">🎟️</div><div class="card-body"><div class="cmd">!join</div><div class="desc">Enter an active raffle for free. You have 30 seconds from when it starts. You'll get a confirmation message when you're in.</div><div class="usage">!join</div></div><span class="badge badge-free">FREE</span></div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">🎮 Social & Info</div>
+    <div class="section-title">🎮 Social &amp; Info</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎮</div>
-        <div class="card-body">
-          <div class="cmd">!ow</div>
-          <div class="desc">Get Mushy's Overwatch 2 username.</div>
-          <div class="usage">!ow</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🦸</div>
-        <div class="card-body">
-          <div class="cmd">!marvel</div>
-          <div class="desc">Get Mushy's Marvel Rivals username.</div>
-          <div class="usage">!marvel</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎯</div>
-        <div class="card-body">
-          <div class="cmd">!apex</div>
-          <div class="desc">Get Mushy's Apex Legends username.</div>
-          <div class="usage">!apex</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🖥️</div>
-        <div class="card-body">
-          <div class="cmd">!steam</div>
-          <div class="desc">Get Mushy's Steam username and friend code.</div>
-          <div class="usage">!steam</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">💬</div>
-        <div class="card-body">
-          <div class="cmd">!discord / !dc</div>
-          <div class="desc">Get the link to Mushy's Discord server.</div>
-          <div class="usage">!discord &nbsp;|&nbsp; !dc</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🕐</div>
-        <div class="card-body">
-          <div class="cmd">!lastseen &lt;username&gt;</div>
-          <div class="desc">Check when a viewer was last active in chat.</div>
-          <div class="usage">!lastseen @friend</div>
-        </div>
-        <span class="badge badge-fun">INFO</span>
-      </div>
+      <div class="card"><div class="card-icon">🎮</div><div class="card-body"><div class="cmd">!ow</div><div class="desc">Get Mushy's Overwatch 2 username.</div><div class="usage">!ow</div></div><span class="badge badge-fun">INFO</span></div>
+      <div class="card"><div class="card-icon">🦸</div><div class="card-body"><div class="cmd">!marvel</div><div class="desc">Get Mushy's Marvel Rivals username.</div><div class="usage">!marvel</div></div><span class="badge badge-fun">INFO</span></div>
+      <div class="card"><div class="card-icon">🎯</div><div class="card-body"><div class="cmd">!apex</div><div class="desc">Get Mushy's Apex Legends username.</div><div class="usage">!apex</div></div><span class="badge badge-fun">INFO</span></div>
+      <div class="card"><div class="card-icon">🖥️</div><div class="card-body"><div class="cmd">!steam</div><div class="desc">Get Mushy's Steam username and friend code.</div><div class="usage">!steam</div></div><span class="badge badge-fun">INFO</span></div>
+      <div class="card"><div class="card-icon">💬</div><div class="card-body"><div class="cmd">!discord / !dc</div><div class="desc">Get the link to Mushy's Discord server.</div><div class="usage">!discord &nbsp;|&nbsp; !dc</div></div><span class="badge badge-fun">INFO</span></div>
+      <div class="card"><div class="card-icon">🕐</div><div class="card-body"><div class="cmd">!lastseen &lt;username&gt;</div><div class="desc">Check when a viewer was last active in chat.</div><div class="usage">!lastseen @friend</div></div><span class="badge badge-fun">INFO</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">🛡️ Mod Commands</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">📣</div>
-        <div class="card-body">
-          <div class="cmd">!so &lt;@user&gt; / /shoutout &lt;@user&gt;</div>
-          <div class="desc">Shout out a fellow streamer in chat and on Twitch. Use !so for a chat message shoutout or /shoutout for Twitch's official shoutout feature.</div>
-          <div class="usage">!so @streamer &nbsp;|&nbsp; /shoutout @streamer</div>
-        </div>
-        <span class="badge badge-hard">MOD ONLY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎟️</div>
-        <div class="card-body">
-          <div class="cmd">!raffle &lt;amount&gt;</div>
-          <div class="desc">Start a raffle for the specified amount of $SC. The prize is created from thin air — nothing is deducted. Chat has 30 seconds to enter with !join. Supports shorthand amounts.</div>
-          <div class="usage">!raffle 5000 &nbsp;|&nbsp; !raffle 10k &nbsp;|&nbsp; !raffle 1m</div>
-        </div>
-        <span class="badge badge-hard">MOD ONLY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">❌</div>
-        <div class="card-body">
-          <div class="cmd">!raffle cancel</div>
-          <div class="desc">Cancel an active raffle immediately. No winners are drawn and no $SC is awarded.</div>
-          <div class="usage">!raffle cancel</div>
-        </div>
-        <span class="badge badge-hard">MOD ONLY</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎫</div>
-        <div class="card-body">
-          <div class="cmd">!lottery draw</div>
-          <div class="desc">Draw a lottery winner live on stream. One random ticket holder wins the entire pot.</div>
-          <div class="usage">!lottery draw</div>
-        </div>
-        <span class="badge badge-hard">MOD ONLY</span>
-      </div>
+      <div class="card"><div class="card-icon">📣</div><div class="card-body"><div class="cmd">!so &lt;@user&gt; / /shoutout &lt;@user&gt;</div><div class="desc">Shout out a fellow streamer in chat and on Twitch. Use !so for a chat message shoutout or /shoutout for Twitch's official shoutout feature.</div><div class="usage">!so @streamer &nbsp;|&nbsp; /shoutout @streamer</div></div><span class="badge badge-hard">MOD ONLY</span></div>
+      <div class="card"><div class="card-icon">🎟️</div><div class="card-body"><div class="cmd">!raffle &lt;amount&gt;</div><div class="desc">Start a raffle for the specified amount of $SC. The prize is created from thin air — nothing is deducted. Chat has 30 seconds to enter with !join. Supports shorthand amounts.</div><div class="usage">!raffle 5000 &nbsp;|&nbsp; !raffle 10k &nbsp;|&nbsp; !raffle 1m</div></div><span class="badge badge-hard">MOD ONLY</span></div>
+      <div class="card"><div class="card-icon">❌</div><div class="card-body"><div class="cmd">!raffle cancel</div><div class="desc">Cancel an active raffle immediately. No winners are drawn and no $SC is awarded.</div><div class="usage">!raffle cancel</div></div><span class="badge badge-hard">MOD ONLY</span></div>
+      <div class="card"><div class="card-icon">🎫</div><div class="card-body"><div class="cmd">!lottery draw</div><div class="desc">Draw a lottery winner live on stream. One random ticket holder wins the entire pot.</div><div class="usage">!lottery draw</div></div><span class="badge badge-hard">MOD ONLY</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">📝 Amount Formats</div>
     <div class="cards">
-      <div class="card">
-        <div class="card-icon">🔢</div>
-        <div class="card-body">
-          <div class="desc">All gambling commands support these amount formats:</div>
-          <div class="usage">500 &nbsp;|&nbsp; 1k &nbsp;|&nbsp; 2.5k &nbsp;|&nbsp; 10m &nbsp;|&nbsp; 1.5b &nbsp;|&nbsp; 1t &nbsp;|&nbsp; all &nbsp;|&nbsp; half &nbsp;|&nbsp; 25%</div>
-        </div>
-        <span class="badge badge-info">TIP</span>
-      </div>
+      <div class="card"><div class="card-icon">🔢</div><div class="card-body"><div class="desc">All gambling commands support these amount formats:</div><div class="usage">500 &nbsp;|&nbsp; 1k &nbsp;|&nbsp; 2.5k &nbsp;|&nbsp; 10m &nbsp;|&nbsp; 1.5b &nbsp;|&nbsp; 1t &nbsp;|&nbsp; all &nbsp;|&nbsp; half &nbsp;|&nbsp; 25%</div></div><span class="badge badge-info">TIP</span></div>
     </div>
   </div>
 
